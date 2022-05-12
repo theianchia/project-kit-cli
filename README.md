@@ -91,10 +91,10 @@ Within some examples you may find the following directories and files:
 
 ```
 ├── bin
-	└── command
+    └── command
 └── lib
-	├── command.rb
-	└── sub_task.rb
+    ├── command.rb
+    └── sub_task.rb
 ```
 
 1. To call the lib from the bin file, we need to change the permissions of the file so that it can be executed
@@ -125,6 +125,7 @@ Within some examples you may find the following directories and files:
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Additional Takeaways
-* At the end of a Ruby script, `.start(ARGV)` would need to be added to instantiate the class and invoke the task unlike Thor files
+* Unlike Thor files, `.start(ARGV)` would need to be added at the end of a Ruby script to instantiate the class and invoke the task
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
