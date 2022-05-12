@@ -20,14 +20,9 @@
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
+    <li><a href="#installation">Installation</a></li>
     <li><a href="#usage">Usage</a></li>
+    <li><a href="#additional-takeaways">Additional Takeaways</a></li>
   </ol>
 </details>
 
@@ -104,14 +99,26 @@ Within some examples you may find the following directories and files:
 
 1. To call the lib from the bin file, we need to change the permissions of the file so that it can be executed
   ```sh
-  ~ chmod a+x <file>
+  ~ chmod a+x <file> 
+  or 
+  ~ chmod a+x bin/command
   ```
 
 2. Now, we are able to call it
   ```sh
-Commands:
+  ~ ./cli.rb
+  Commands:
   cli.rb docs            # create and publish docs
   cli.rb help [COMMAND]  # Describe available commands or one specific command
+  
+  or 
+  
+  ~ bin/command
+  Commands:
+  command anothercounter  # Prints numbers + 2 in sequence
+  command count           # Prints numbers in sequence
+  command foo             # Prints foo
+  command help [COMMAND]  # Describe available commands or one specific command
   ```
 
 
