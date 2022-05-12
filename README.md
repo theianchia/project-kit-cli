@@ -59,8 +59,39 @@
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
-## File Structure
+## Usage
+### Using a `.thor` file
 
+1. Run `thor list` to see the commands available for a thor task 
+  ```sh
+a
+-
+thor a:list LINE  # does A stuff
+
+b
+-
+thor b:dig NAME  # does B stuff
+
+test
+----
+thor test:goodbye     # say goodbye to the world
+thor test:hello NAME  # say hello to NAME
+  ```
+2. Run `thor help <command>` to see the description and options for a particular command
+  ```sh
+Usage:
+  thor test:hello NAME
+
+Options:
+  -y, [--yell], [--no-yell]        # shout hello to NAME
+      [--verbose], [--no-verbose]  
+
+say hello to NAME
+  ```
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+### Using a `.rb` file
 Within some examples you may find the following directories and files:
 
 ```
@@ -71,50 +102,22 @@ Within some examples you may find the following directories and files:
 	└── sub_task.rb
 ```
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-## Usage
-If you are using a `.thor` file
-
-1. Run `thor list` to see the commands available for a thor task 
-  ```sh
-  test
-----
-thor test:example FILE            # an example task that does something with a file
-thor test:goodbye                 # say goodbye to the world
-thor test:hello NAME --from=FROM  # say hello to NAME
-thor test:one                     # Prints 1 2 3
-thor test:test FILE               # an example task that test a file
-thor test:three                   # Prints 3
-thor test:two                     # Prints 2 3
-  ```
-2. Run `thor help <command>` to see the description and options for a particular command
-  ```sh
-  Usage:
-  thor test:example FILE
-
-Options:
-  -d, [--delete=DELETE]            # Delete the file after parsing it
-      [--verbose], [--no-verbose]  
-
-an example task that does something with a file
-  ```
-
-If you are using a `.rb` file
-
-1. To call the lib from the bin file, you need to change the permissions of the file so that it can be executed
+1. To call the lib from the bin file, we need to change the permissions of the file so that it can be executed
   ```sh
   ~ chmod a+x <file>
   ```
 
 2. Now, we are able to call it
   ```sh
-  Commands:
-  mythorcommand.rb foo             # Prints foo
-  mythorcommand.rb help [COMMAND]  # Describe available commands or one specific command
+Commands:
+  cli.rb docs            # create and publish docs
+  cli.rb help [COMMAND]  # Describe available commands or one specific command
   ```
+
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Additional Takeaways
 
 
+<p align="right">(<a href="#top">back to top</a>)</p>
