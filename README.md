@@ -125,6 +125,6 @@ Within some examples you may find the following directories and files:
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Additional Takeaways
-
+* At the end of a Ruby script, `.start(ARGV)` would need to be added to instantiate the class and invoke the task unlike Thor files
 
 <p align="right">(<a href="#top">back to top</a>)</p>
