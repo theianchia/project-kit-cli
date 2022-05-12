@@ -1,6 +1,6 @@
 require 'thor/group'
 
-module MyAwesomeGem
+module SomeGem
   class MyCounter < Thor::Group
     desc "Prints 1 2 3"
 

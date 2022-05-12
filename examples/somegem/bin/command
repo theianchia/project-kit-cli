@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 require File.expand_path('lib/command', Dir.pwd)
-MyAwesomeGem::MyCommand.start
+SomeGem::MyCommand.start
 
 # make file executable using chmod a+x bin/command
