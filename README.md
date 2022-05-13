@@ -32,7 +32,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 * Thor is a toolkit for building CLI interfaces. A Thor class exposes an executable with a number of subcommands where public methods defined become task commands.
-* In the repository, you'll find several examples using Thor to create `Thor::Group`, subcommands and generators. 
+* In the repository, you'll find several examples using `Thor::Group`, subcommands and generators. 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -125,7 +125,7 @@ Within some examples you may find the following directories and files:
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-## Project Kit Example
+## Project Kit 
 Project kit is a simple project starter kit that allows you to perform file operations from the command line. It is packaged into a gem and can be installed to any system.
 
 ### Usage
@@ -134,7 +134,7 @@ Project kit is a simple project starter kit that allows you to perform file oper
   ~ bundle install
   ```
   
-2. From the binary, change the permissions so that you can execute the file
+2. Change the permissions so that you can execute the file
   ```sh
   ~ chmod +x exe/proj_kit
   ```
@@ -143,12 +143,13 @@ Project kit is a simple project starter kit that allows you to perform file oper
   ```sh
   ~ bundle exec exe/proj_kit
   Commands:
-  proj_kit help [COMMAND]  # Describe available commands or one specific command
-  proj_kit output FILE     # prints the content of FILE
-  proj_kit touch FILE      # creates an empty file named FILE
+  proj_kit copy FILE NEW_FILE  # writes the content of FILE to NEW_FILE
+  proj_kit help [COMMAND]      # Describe available commands or one specific ...
+  proj_kit output FILE         # prints the content of FILE
+  proj_kit touch FILE          # creates an empty file named FILE
 
 Options:
-  [--verbose], [--no-verbose]  
+  [--verbose], [--no-verbose] 
   
   ~ bundle exec exe/proj_kit help output
   Usage:
