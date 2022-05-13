@@ -31,20 +31,30 @@ module ProjKit
         log("Done writing")
       end
     end
-  
+    
+    desc 'copy FILE NEW_FILE', 'writes the content of FILE to NEW_FILE'
+    def copy(old_file_name, new_file_name)
+      log("Starting to read file...")
+      contents = File.read(old_file_name)
+      f = File.new(new_file_name, "w")
+      log("Writing to #{new_file_name}...")
+      f.write(contents)
+      log("Done writing")
+    end
+
+    desc 'touch FILE', 'creates an empty file named FILE'
+    def touch(file_name)
+      log("Touching file...")
+      f = File.new(file_name, "w")
+      log("File created")
+    end
+
     no_commands do 
       def log(str)
         puts str if options[:verbose]
       end
     end
-  
-    desc 'touch FILE', 'creates an empty file named FILE'
-    def touch(file_name)
-      log("Touching file...")
-      f = File.new(file_name, "w")
-    end
-  
+    
   end
-  
-  CLI.start(ARGV)
+
 end

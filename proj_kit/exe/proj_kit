@@ -1,3 +1,4 @@
 #!/usr/bin/env ruby
 
 require "proj_kit"
+ProjKit::CLI.start(ARGV)

@@ -3,8 +3,8 @@ require 'thor/group'
 module SomeGem
   class AnotherCounter < Thor::Group
     # number will be available as attr_accessor
-    argument :number, :type => :numeric, :desc => "The number to start counting"
-    desc "Prints the 'number' given up to 'number+2'"
+    argument :number, :type => :numeric, :desc => "The number to start counting from"
+    desc "Prints the 'number' given up to 'number + 2'"
   
     def one
       puts number + 0

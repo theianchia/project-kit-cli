@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.authors = ["Ian Chia"]
   spec.email = ["ian.chia@kaligo.com"]
 
-  spec.summary = "Perform project and file operations from the CLI"
-  spec.description = "Perform project and file operations from the CLI"
+  spec.summary = "Simple project starter kit to perform common file operations from the CLI"
+  spec.description = "Simple project starter kit to perform common file operations from the CLI"
   spec.homepage = "https://github.com/theianchia/ruby-cli-tool/proj_kit"
   spec.required_ruby_version = ">= 2.6.0"
 
