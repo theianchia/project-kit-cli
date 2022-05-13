@@ -22,6 +22,7 @@
     </li>
     <li><a href="#installation">Installation</a></li>
     <li><a href="#usage">Usage</a></li>
+    <li><a href="#project-kit-example">Project Kit Example</a></li>
     <li><a href="#additional-takeaways">Additional Takeaways</a></li>
   </ol>
 </details>
@@ -121,6 +122,45 @@ Within some examples you may find the following directories and files:
   command help [COMMAND]  # Describe available commands or one specific command
   ```
 
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+## Project Kit Example
+Project kit is a simple project starter kit that allows you to perform file operations from the command line. It is packaged into a gem and can be installed to any system.
+
+### Usage
+1. Install missing gem executables
+  ```sh
+  ~ bundle install
+  ```
+  
+2. From the binary, change the permissions so that you can execute the file
+  ```sh
+  ~ chmod +x exe/proj_kit
+  ```
+
+3. Call our lib from the binary file
+  ```sh
+  ~ bundle exec exe/proj_kit
+  Commands:
+  proj_kit help [COMMAND]  # Describe available commands or one specific command
+  proj_kit output FILE     # prints the content of FILE
+  proj_kit touch FILE      # creates an empty file named FILE
+
+Options:
+  [--verbose], [--no-verbose]  
+  
+  ~ bundle exec exe/proj_kit help output
+  Usage:
+  proj_kit output FILE
+
+Options:
+  [--stderr], [--no-stderr]    # prints the content of FILE to STDERR handle
+  [--new-file=NEW_FILE]        # writes the content to NEW_FILE
+  [--verbose], [--no-verbose]  
+
+prints the content of FILE
+  ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
