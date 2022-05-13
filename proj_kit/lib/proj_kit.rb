@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative "proj_kit/version"
+require File.expand_path("lib/proj_setup", Dir.pwd)
 require 'thor'
 
 module ProjKit
@@ -55,6 +56,6 @@ module ProjKit
       end
     end
     
+    register(ProjKit::SetUp, "setup", "setup", "quick setup of common script files")
   end
-
 end

@@ -7,8 +7,6 @@ class Newgem < Thor::Group
   
     def self.source_root
       # put relative_to_original_destination_root('./', false)
-      puts source_paths
-      puts File.dirname(__FILE__)
       File.dirname(__FILE__)
     end
   
@@ -19,14 +17,5 @@ class Newgem < Thor::Group
     def create_test_file
       test = options[:test_framework] == "rspec" ? :spec : :test
       create_file "#{name}/#{test}/#{name}_#{test}.rb"
-    end
-  
-    def copy_licence
-      if yes?("Use MIT license?")
-        # Make a copy of the MITLICENSE file at the source root
-        copy_file "MITLICENSE", "#{name}/MITLICENSE"
-      else
-        say "Shame on you…", :red
-      end
     end
   end
