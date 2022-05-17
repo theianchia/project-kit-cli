@@ -173,9 +173,9 @@ prints the content of FILE
 ├── README.md
 ├── .gitignore
 └── lib
-    ├── <project>.rb
-    └── <project>
-        └── version.rb
+      ├── <project>.rb
+      └── <project>
+          └── version.rb
 ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
