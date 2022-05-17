@@ -8,6 +8,10 @@ module ProjKit
     include Thor::Actions
     class_option :license, :type => :boolean
 
+    def self.source_root
+      File.dirname(__FILE__)
+    end
+
     def get_name
       @name = ask("Name of your new project:")
       puts @name
@@ -38,6 +42,6 @@ module ProjKit
       template("templates/main.rb.tt", "#{@name}/lib/#{@name}.rb")
       template("templates/version.rb.tt", "#{@name}/lib/#{@name}/version.rb")
     end
-    
+
   end
 end
