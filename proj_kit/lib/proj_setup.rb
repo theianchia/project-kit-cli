@@ -6,8 +6,7 @@ require 'thor'
 module ProjKit
   class SetUp < Thor::Group
     include Thor::Actions
-    class_option :verbose, :type => :boolean
-    class_option :license, :type => :boolean, :aliases => "-l", :desc => "include license"
+    class_option :license, :type => :boolean
 
     def get_name
       @name = ask("Name of your new project:")
@@ -39,11 +38,6 @@ module ProjKit
       template("templates/main.rb.tt", "#{@name}/lib/#{@name}.rb")
       template("templates/version.rb.tt", "#{@name}/lib/#{@name}/version.rb")
     end
-
-    no_commands do 
-      def log(str)
-        puts str if options[:verbose]
-      end
-    end
+    
   end
 end

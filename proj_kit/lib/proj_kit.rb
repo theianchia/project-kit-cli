@@ -43,7 +43,7 @@ module ProjKit
       log("Done writing")
     end
 
-    desc 'touch FILE', 'creates an empty file named FILE'
+    desc 'touch FILE', 'creates an empty FILE'
     def touch(file_name)
       log("Touching file...")
       f = File.new(file_name, "w")

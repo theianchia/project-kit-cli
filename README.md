@@ -58,7 +58,7 @@
 ## Usage
 ### Using a `.thor` file
 
-1. Run `thor list` to see the commands available for a thor task 
+1. Run `thor list` or `thor -T` to see a list of available commands for a thor task 
   ```sh
 a
 -
