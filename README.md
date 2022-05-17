@@ -126,7 +126,7 @@ Within some examples you may find the following directories and files:
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Project Kit 
-Project kit is a simple project starter kit that allows you to perform file operations from the command line. It is packaged into a gem and can be installed to any system.
+Project kit is a simple project starter kit that performs basic file operations and bootstraps common development items. It is packaged into a gem and can be installed to any system.
 
 ### Usage
 1. Install missing gem executables
@@ -142,14 +142,15 @@ Project kit is a simple project starter kit that allows you to perform file oper
 3. Call our lib from the binary file
   ```sh
   ~ bundle exec exe/proj_kit
-  Commands:
+Commands:
   proj_kit copy FILE NEW_FILE  # writes the content of FILE to NEW_FILE
   proj_kit help [COMMAND]      # Describe available commands or one specific ...
   proj_kit output FILE         # prints the content of FILE
-  proj_kit touch FILE          # creates an empty file named FILE
+  proj_kit setup               # quick project setup
+  proj_kit touch FILE          # creates an empty FILE
 
 Options:
-  [--verbose], [--no-verbose] 
+  [--verbose], [--no-verbose]  
   
   ~ bundle exec exe/proj_kit help output
   Usage:
@@ -163,10 +164,25 @@ Options:
 prints the content of FILE
   ```
 
+4. Running `bundle exec exe/proj_kit setup` would create
+  ```
+<project>
+├── <project>.gemspec
+├── Gemfile
+├── LICENSE.txt
+├── README.md
+├── .gitignore
+└── lib
+    ├── <project>.rb
+    └── <project>
+        └── version.rb
+```
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Additional Takeaways
 * Unlike Thor files, `.start(ARGV)` would need to be added at the end of a Ruby script to instantiate the class and invoke the task
+* `Thor::Group` are extended in generators to easily execute all the methods defined in the class in the order they were defined
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
