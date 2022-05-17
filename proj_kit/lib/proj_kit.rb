@@ -56,6 +56,6 @@ module ProjKit
       end
     end
     
-    register(ProjKit::SetUp, "setup", "setup", "quick setup of common script files")
+    register(ProjKit::SetUp, "setup", "setup", "quick project setup")
   end
 end
