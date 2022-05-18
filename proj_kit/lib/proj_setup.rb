@@ -14,7 +14,7 @@ module ProjKit
 
     def get_name
       @name = ask("Name of your new project:")
-      puts @name
+      say "Setting up #{@name}...", :blue
     end
 
     def create_folder
@@ -29,7 +29,7 @@ module ProjKit
     end
 
     def copy_license
-      return unless options[:license] == 'true'
+      return unless options[:license]
       copy_file "templates/LICENSE.txt", "#{@name}/MITLICENSE"
     end
 

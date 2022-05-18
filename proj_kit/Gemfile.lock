@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    proj_kit (0.1.0)
+    proj_kit (1.0.0)
       thor (~> 1.2.1)
 
 GEM
