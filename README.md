@@ -212,7 +212,7 @@ Run `rspec spec/proj_kit_spec.rb` to test the behavior of the CLI
         create  test/lib/test/version.rb
       setup a gem project
 
-  Finished in 3.69 seconds (files took 0.18694 seconds to load)
+  Finished in 1.38 seconds (files took 0.23491 seconds to load)
   3 examples, 0 failures
   ```
 
@@ -221,6 +221,8 @@ Run `rspec spec/proj_kit_spec.rb` to test the behavior of the CLI
 ## Additional Takeaways
 * Unlike Thor files, `.start(ARGV)` would need to be added at the end of a Ruby script to instantiate the class and invoke the task
 * `Thor::Group` are extended in generators to easily execute all the methods defined in the class in the order they were defined
+* Open3#popen3 allows you to interact with the external command while it is running and consolidates all 3 of the std pipes into a single stream
+* As each pipe has a limited buffer size, it is important to ensure the stdout streams are continuously read else `stdin.write` will be blocked
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>

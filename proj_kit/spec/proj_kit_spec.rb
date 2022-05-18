@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'open3'
+
 RSpec.describe ProjKit do
 
   describe '#touch' do
@@ -28,7 +30,14 @@ RSpec.describe ProjKit do
   describe '#setup' do 
     it "setup a gem project" do 
       project = 'test'
-      system("bundle exec exe/proj_kit setup --license")
+      Open3.popen3("bundle exec exe/proj_kit setup --license") do |stdin, stdout, stderr, wait_thr| 
+        stdin.write("#{project}\n")
+        puts stdout.read
+        stdin.close
+        stdout.close
+        stderr.close
+        wait_thr.join
+      end 
       expect(File.exist?(project)).to be true
       if File.exist?(project)
         system("rm -r #{project}")
