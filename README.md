@@ -2,9 +2,9 @@
 
 <!-- PROJECT LOGO -->
 <div align="center">
-  <h3 align="center">Developer CLI Tool</h3>
+  <h3 align="center">Project Kit CLI Tool</h3>
   <p align="center">
-    Simple CLI tool examples built using Ruby and Thor
+    Developer tool built using Ruby and Thor
   </p>
 </div>
 
@@ -32,7 +32,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 * Thor is a toolkit for building CLI interfaces. A Thor class exposes an executable with a number of subcommands where public methods defined become task commands.
-* In the repository, you'll find several examples using `Thor::Group`, subcommands and generators. 
+* In this repository, you'll find the code for Project Kit and several other examples demonstrating `Thor::Group`, subcommands and generators. 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -126,7 +126,7 @@ Within some examples you may find the following directories and files:
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Project Kit 
-Project kit is a simple project starter kit that performs basic file operations and makes bootstrapping common development items easy. It is packaged into a gem and can be installed to any system.
+Project kit is meant to be a project starter kit to make bootstrapping common development items easy and perform other basic file operations. It is packaged into a gem and can be installed to any system.
 
 ### Usage
 1. Install missing gem executables
