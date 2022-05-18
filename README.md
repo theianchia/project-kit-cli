@@ -22,7 +22,7 @@
     </li>
     <li><a href="#installation">Installation</a></li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#project-kit-example">Project Kit Example</a></li>
+    <li><a href="#project-kit">Project Kit</a></li>
     <li><a href="#additional-takeaways">Additional Takeaways</a></li>
   </ol>
 </details>
@@ -126,7 +126,7 @@ Within some examples you may find the following directories and files:
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Project Kit 
-Project kit is a simple project starter kit that performs basic file operations and bootstraps common development items. It is packaged into a gem and can be installed to any system.
+Project kit is a simple project starter kit that performs basic file operations and makes bootstrapping common development items easy. It is packaged into a gem and can be installed to any system.
 
 ### Usage
 1. Install missing gem executables
