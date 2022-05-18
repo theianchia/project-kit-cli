@@ -178,6 +178,18 @@ prints the content of FILE
           └── version.rb
 ```
 
+5. Package and install the gem
+  ```sh
+  ~ gem build proj_kit.gemspec
+  ~ gem install proj_kit-1.0.0.gem --local
+  ```
+
+6. Run the gem 
+  ```sh
+  ~ proj_kit
+  ```
+
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Additional Takeaways
