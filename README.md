@@ -164,7 +164,7 @@ Options:
 prints the content of FILE
   ```
 
-4. Running `bundle exec exe/proj_kit setup` would create
+4. Running `bundle exec exe/proj_kit setup --license` would create
   ```
 <project>
 ├── <project>.gemspec
