@@ -189,6 +189,32 @@ prints the content of FILE
   ~ proj_kit
   ```
 
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+### Testing
+Run `rspec spec/proj_kit_spec.rb` to test the behavior of the CLI
+  ```sh
+  ProjKit
+    #touch
+      creates a new empty file
+    #output
+  Hello World!
+      writes file contents to a new file
+    #setup
+  Name of your new project: test
+  Setting up test...
+        create  test/test.gemspec
+        create  test/Gemfile
+        create  test/README.md
+        create  test/.gitignore
+        create  test/MITLICENSE
+        create  test/lib/test.rb
+        create  test/lib/test/version.rb
+      setup a gem project
+
+  Finished in 3.69 seconds (files took 0.18694 seconds to load)
+  3 examples, 0 failures
+  ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
