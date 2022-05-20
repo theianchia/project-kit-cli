@@ -30,7 +30,7 @@ RSpec.describe ProjKit do
   describe '#setup' do 
     it "setup a gem project" do 
       project = 'test'
-      Open3.popen3("bundle exec exe/proj_kit setup --license") do |stdin, stdout, stderr, wait_thr| 
+      Open3.popen3("bundle exec exe/proj_kit setup hanami") do |stdin, stdout, stderr, wait_thr| 
         stdin.write("#{project}\n")
         puts stdout.read
         stdin.close
