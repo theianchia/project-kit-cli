@@ -151,12 +151,14 @@ Commands:
 Options:
   [--verbose], [--no-verbose]  
 
+
   ~ bundle exec exe/proj_kit setup
 Commands:
   proj_kit setup gem             # quick gem setup
   proj_kit setup hanami          # quick hanami project setup
   proj_kit setup help [COMMAND]  # Describe subcommands or one specific subcommand
   proj_kit setup rails           # quick rails project setup
+ 
   
   ~ bundle exec exe/proj_kit help output
   Usage:

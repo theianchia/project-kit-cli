@@ -6,7 +6,6 @@ require "fileutils"
 
 module ProjKit
   class Hanami < Thor::Group
-    include Thor::Actions
     def start 
       invoke GenerateProject
     end
@@ -23,31 +22,6 @@ module ProjKit
       invoke GenerateProject
     end
   end
-
-  class SetUp < Thor
-    register(ProjKit::Hanami, "hanami", "hanami", "quick hanami project setup")
-    register(ProjKit::Rails, "rails", "rails", "quick rails project setup")
-    register(ProjKit::Gem, "gem", "gem", "quick gem setup")
-
-    # desc "hanami", "create files for a hanami app"
-    # subcommand "hanami", Hanami
-
-    # desc "rails", "create files for a rails app"
-    # subcommand "rails", Rails
-
-    # desc "gem", "create files for a gem"
-    # subcommand "gem", Gem
-  end
-
-  # class SubCommandBase < Thor
-  #   def self.banner(command, namespace = nil, subcommand = false)
-  #     "#{basename} #{subcommand_prefix} #{command.usage}"
-  #   end
-  
-  #   def self.subcommand_prefix
-  #     self.name.gsub(%r{.*::}, '').gsub(%r{^[A-Z]}) { |match| match[0].downcase }.gsub(%r{[A-Z]}) { |match| "-#{match[0].downcase}" }
-  #   end
-  # end
 
   class GenerateProject < Thor::Group
     include Thor::Actions
@@ -80,6 +54,12 @@ module ProjKit
         end
       end
     end
+  end
+
+  class SetUp < Thor
+    register(ProjKit::Hanami, "hanami", "hanami", "quick hanami project setup")
+    register(ProjKit::Rails, "rails", "rails", "quick rails project setup")
+    register(ProjKit::Gem, "gem", "gem", "quick gem setup")
   end
 end
 
