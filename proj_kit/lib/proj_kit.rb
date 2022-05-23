@@ -56,6 +56,6 @@ module ProjKit
       end
     end
     
-    register(ProjKit::SetUp, "setup", "setup PROJECT_TYPE", "quick project setup")
+    register(ProjKit::SetUp, "setup", "setup", "quick project setup")
   end
 end
