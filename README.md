@@ -34,7 +34,6 @@
 * Thor is a toolkit for building CLI interfaces. A Thor class exposes an executable with a number of subcommands where public methods defined become task commands.
 * In this repository, you'll find the code for Project Kit and several other examples demonstrating `Thor::Group`, subcommands and generators. 
 
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Built With
 
@@ -126,7 +125,7 @@ Within some examples you may find the following directories and files:
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Project Kit 
-Project kit is meant to be a project starter kit to make bootstrapping common development items easy and perform other basic file operations. It is packaged into a gem and can be installed to any system.
+Project kit is a project starter kit that helps make bootstrapping common development items for various ruby apps or gems easy. It can be packaged into a gem and installed to any system.
 
 ### Usage
 1. Install missing gem executables
@@ -144,13 +143,20 @@ Project kit is meant to be a project starter kit to make bootstrapping common de
   ~ bundle exec exe/proj_kit
 Commands:
   proj_kit copy FILE NEW_FILE  # writes the content of FILE to NEW_FILE
-  proj_kit help [COMMAND]      # Describe available commands or one specific ...
+  proj_kit help [COMMAND]      # Describe available commands or one specific command
   proj_kit output FILE         # prints the content of FILE
   proj_kit setup               # quick project setup
   proj_kit touch FILE          # creates an empty FILE
 
 Options:
   [--verbose], [--no-verbose]  
+
+  ~ bundle exec exe/proj_kit setup
+Commands:
+  proj_kit setup gem             # quick gem setup
+  proj_kit setup hanami          # quick hanami project setup
+  proj_kit setup help [COMMAND]  # Describe subcommands or one specific subcommand
+  proj_kit setup rails           # quick rails project setup
   
   ~ bundle exec exe/proj_kit help output
   Usage:
@@ -164,7 +170,7 @@ Options:
 prints the content of FILE
   ```
 
-4. Running `bundle exec exe/proj_kit setup --license` would create
+4. Running `bundle exec exe/proj_kit setup hanami` would create
   ```
 <project>
 ├── <project>.gemspec
