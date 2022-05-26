@@ -3,9 +3,8 @@
 require "thor"
 require "pathname"
 require "tty-table"
-MASTER_TEMPLATE_PATH = File.expand_path("master_templates", File.dirname(__FILE__))
 
-module Kit
+module ProjectKit
   class SyncFiles < Thor::Group
     include Thor::Actions
     class_option :details
@@ -21,14 +20,14 @@ module Kit
         synced = []
         say "\nfinding #{target}", :green
         return say "could not find #{target} directory", :red unless Dir.exist?(target)
-        return say "could not find #{type} template directory", :red unless Dir.exist?("#{MASTER_TEMPLATE_PATH}/#{type}")
-        Dir.glob("#{MASTER_TEMPLATE_PATH}/#{type}/**/*", File::FNM_DOTMATCH) do |abs_file_path|
+        return say "could not find #{type} template directory", :red unless Dir.exist?("#{TEMPLATE_PATH}/#{type}")
+        Dir.glob("#{TEMPLATE_PATH}/#{type}/**/*", File::FNM_DOTMATCH) do |abs_file_path|
           file_pathname = Pathname.new(abs_file_path)
-          template_pathname = Pathname.new("#{MASTER_TEMPLATE_PATH}/#{type}")
+          template_pathname = Pathname.new("#{TEMPLATE_PATH}/#{type}")
           file = file_pathname.relative_path_from(template_pathname).to_s
-          unless ['.', '..', '.DS_Store'].include?(file)
+          unless (['.', '..'].include?(file) or file.include?('.DS_Store'))
             if File.file?(abs_file_path)
-              template("master_templates/#{type}/#{file}", "#{target}/#{file}")
+              template("../templates/#{type}/#{file}", "#{target}/#{file}")
               file_content = File.read("#{target}/#{file}")
               template_content = File.read(abs_file_path)
               if file_content == template_content then synced.append(file) else unsynced.append(file) end
@@ -47,12 +46,6 @@ module Kit
 
     def self.exit_on_failure?
       true
-    end
-
-    desc 'common', 'sync common file templates for a project into a target app directory'
-    def common
-      obj = {type: "common", target: options[:target]}
-      invoke SyncFiles, [], :details => obj 
     end
 
     desc 'hanami', 'sync hanami file templates for a project into a target app directory'

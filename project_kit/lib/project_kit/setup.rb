@@ -2,7 +2,7 @@
 
 require "thor"
 require "pathname"
-TEMPLATE_PATH = File.expand_path("templates", File.dirname(__FILE__))
+TEMPLATE_PATH = File.expand_path("../templates", File.dirname(__FILE__))
 
 module ProjectKit
   class SetUpFiles < Thor::Group
@@ -22,13 +22,13 @@ module ProjectKit
         file_pathname = Pathname.new(abs_file)
         template_pathname = Pathname.new("#{TEMPLATE_PATH}/#{type}")
         file = file_pathname.relative_path_from(template_pathname).to_s
-        unless ['.', '..', '.DS_Store'].include?(file)
+        unless (['.', '..'].include?(file) or file.include?('.DS_Store'))
           if File.file?(abs_file)
-            template("templates/#{type}/#{file}", "#{@name}/#{file}")
+            template("../templates/#{type}/#{file}", "../#{@name}/#{file}")
           end 
         end
       end
-      say "#{@name} successfully setup", :green
+      say "#{@name} #{type} project successfully setup", :green
     end 
   end 
 
