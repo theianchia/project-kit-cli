@@ -2,9 +2,9 @@
 
 <!-- PROJECT LOGO -->
 <div align="center">
-  <h3 align="center">Project Kit CLI Tool</h3>
+  <h3 align="center">Project Kit CLI</h3>
   <p align="center">
-    Developer tool built using Ruby and Thor
+    Dev-focused CLI tool to improve efficiency
   </p>
 </div>
 
@@ -31,8 +31,9 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-* Thor is a toolkit for building CLI interfaces. A Thor class exposes an executable with a number of subcommands where public methods defined become task commands.
-* In this repository, you'll find the code for Project Kit and several other examples demonstrating `Thor::Group`, subcommands and generators. 
+* Project Kit is a project starter kit that makes bootstrapping and syncing common development items for various ruby apps or gems easy. It aims to make ruby development work more efficient by hosting these developmnent item templates in a centralised directory as a single source of truth and distribute changes to multiple projects all from a single point.
+* Project Kit was built using Thor, which is a toolkit for building CLI interfaces. A Thor class exposes an executable with a number of subcommands where public methods defined become task commands.
+* In this repository, you will also find several other examples demonstrating `Thor::Group`, subcommands and generators. 
 
 
 ### Built With
@@ -97,7 +98,7 @@ Within some examples you may find the following directories and files:
     └── sub_task.rb
 ```
 
-1. To call the lib from the bin file, we need to change the permissions of the file so that it can be executed
+1. To call lib, we need to change the permissions of our bin script so that it can be executed
   ```sh
   ~ chmod a+x <file> 
   or 
@@ -125,7 +126,6 @@ Within some examples you may find the following directories and files:
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Project Kit 
-Project kit is a project starter kit that helps make bootstrapping common development items for various ruby apps or gems easy. It can be packaged into a gem and installed to any system.
 
 ### Usage
 1. Install missing gem executables
@@ -133,66 +133,53 @@ Project kit is a project starter kit that helps make bootstrapping common develo
   ~ bundle install
   ```
   
-2. Change the permissions so that you can execute the file
+2. Change the permissions so that you can execute the script
   ```sh
-  ~ chmod +x exe/proj_kit
+  ~ chmod +x exe/project_kit
   ```
 
-3. Call our lib from the binary file
+3. Call lib by executing `exe/project_kit` in the current context of bundle; prefix `help` before a command to view the command's description
   ```sh
-  ~ bundle exec exe/proj_kit
+  ~ bundle exec exe/project_kit
 Commands:
-  proj_kit copy FILE NEW_FILE  # writes the content of FILE to NEW_FILE
-  proj_kit help [COMMAND]      # Describe available commands or one specific command
-  proj_kit output FILE         # prints the content of FILE
-  proj_kit setup               # quick project setup
-  proj_kit touch FILE          # creates an empty FILE
-
-Options:
-  [--verbose], [--no-verbose]  
+  project_kit help [COMMAND]  # Describe available commands or one specific command
+  project_kit setup           # initial ruby project setup
+  project_kit sync            # compares project templates with an existing target app directory  
 
 
-  ~ bundle exec exe/proj_kit setup
-Commands:
-  proj_kit setup gem             # quick gem setup
-  proj_kit setup hanami          # quick hanami project setup
-  proj_kit setup help [COMMAND]  # Describe subcommands or one specific subcommand
-  proj_kit setup rails           # quick rails project setup
+  ~ bundle exec exe/project_kit setup gem 
+Name of your new project: hello
+Setting up hello...
+      create  ../hello/.gitignore
+      create  ../hello/.ruby-version
+      create  ../hello/Gemfile
+      create  ../hello/LICENSE.txt
+hello gem project successfully setup
  
   
-  ~ bundle exec exe/proj_kit help output
-  Usage:
-  proj_kit output FILE
-
-Options:
-  [--stderr], [--no-stderr]    # prints the content of FILE to STDERR handle
-  [--new-file=NEW_FILE]        # writes the content to NEW_FILE
-  [--verbose], [--no-verbose]  
-
-prints the content of FILE
+  ~ bundle exec exe/project_kit sync gem -t ../hello
+finding ../hello
+   identical  ../hello/.gitignore
+   identical  ../hello/.ruby-version
+   identical  ../hello/Gemfile
+   identical  ../hello/LICENSE.txt
++--------------+----------------+
+| Synced Files | Unsynced Files |
++--------------+----------------+
+|.gitignore    |                |
+|.ruby-version |                |
+|Gemfile       |                |
+|LICENSE.txt   |                |
++--------------+----------------+
   ```
 
-4. Running `bundle exec exe/proj_kit setup hanami` would create
-  ```
-<project>
-├── <project>.gemspec
-├── Gemfile
-├── LICENSE.txt
-├── README.md
-├── .gitignore
-└── lib
-      ├── <project>.rb
-      └── <project>
-          └── version.rb
-```
-
-5. Package and install the gem
+4. Package and install the gem
   ```sh
   ~ gem build proj_kit.gemspec
   ~ gem install proj_kit-1.0.0.gem --local
   ```
 
-6. Run the gem 
+5. Run the gem 
   ```sh
   ~ proj_kit
   ```
@@ -200,35 +187,30 @@ prints the content of FILE
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Testing
-Run `rspec spec/proj_kit_spec.rb` to test the behavior of the CLI
+Run `rspec spec/project_kit_spec.rb` to test the behavior of the CLI
   ```sh
-  ProjKit
-    #touch
-      creates a new empty file
-    #output
-  Hello World!
-      writes file contents to a new file
-    #setup
-  Name of your new project: test
-  Setting up test...
-        create  test/test.gemspec
-        create  test/Gemfile
-        create  test/README.md
-        create  test/.gitignore
-        create  test/MITLICENSE
-        create  test/lib/test.rb
-        create  test/lib/test/version.rb
-      setup a gem project
+ProjectKit
+  #setup
+Name of your new project: test
+Setting up test...
+      create  test/.gitignore
+      create  test/.ruby-version
+      create  test/Gemfile
+      create  test/LICENSE.txt
+test gem project successfully setup
+    initial setup of a gem project
 
-  Finished in 1.38 seconds (files took 0.23491 seconds to load)
-  3 examples, 0 failures
+Finished in 0.57431 seconds (files took 0.34721 seconds to load)
+1 example, 0 failures
   ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Additional Takeaways
 * Unlike Thor files, `.start(ARGV)` would need to be added at the end of a Ruby script to instantiate the class and invoke the task
-* `Thor::Group` are extended in generators to easily execute all the methods defined in the class in the order they were defined
+* Ruby relies on absolute paths while Thor relies on relative paths, hence the need to resolve the path difference when accessing templates
+* In Project Kit, a `File.file?` check was performed to ensure that the current iterable is a file and not a directory, as by default `template()` creates a copy of a file which might lead to subsequent file clashes later on 
+  * eg. a file clash between `.github` and `.github/PULL_REQUEST_TEMPLATE.md`
 * Open3#popen3 allows you to interact with the external command while it is running and consolidates all 3 of the std pipes into a single stream
 * As each pipe has a limited buffer size, it is important to ensure the stdout streams are continuously read else `stdin.write` will be blocked
 
