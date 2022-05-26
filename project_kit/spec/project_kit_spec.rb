@@ -2,7 +2,7 @@
 
 require 'open3'
 
-RSpec.describe ProjKit do
+RSpec.describe ProjectKit do
 
   describe '#touch' do
     it "creates a new empty file" do
