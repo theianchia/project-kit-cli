@@ -18,7 +18,7 @@ module ProjectKit
       targets.each do |target|
         unsynced = []
         synced = []
-        say "\nfinding #{target}", :green
+        say "finding #{target}", :green
         return say "could not find #{target} directory", :red unless Dir.exist?(target)
         return say "could not find #{type} template directory", :red unless Dir.exist?("#{TEMPLATE_PATH}/#{type}")
         Dir.glob("#{TEMPLATE_PATH}/#{type}/**/*", File::FNM_DOTMATCH) do |abs_file_path|
