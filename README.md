@@ -149,8 +149,8 @@ Commands:
 
 
   ~ bundle exec exe/project_kit setup gem 
-Name of your new project: hello
-Setting up hello...
+name of your new project: hello
+setting up hello...
       create  ../hello/.gitignore
       create  ../hello/.ruby-version
       create  ../hello/Gemfile
@@ -192,8 +192,8 @@ Run `rspec spec/project_kit_spec.rb` to test the behavior of the CLI
   ```sh
 ProjectKit
   #setup
-Name of your new project: test
-Setting up test...
+name of your new project: test
+setting up test...
       create  /Users/ian.chia@kaligo.com/Downloads/project-kit-cli/test/.gitignore
       create  /Users/ian.chia@kaligo.com/Downloads/project-kit-cli/test/.ruby-version
       create  /Users/ian.chia@kaligo.com/Downloads/project-kit-cli/test/Gemfile

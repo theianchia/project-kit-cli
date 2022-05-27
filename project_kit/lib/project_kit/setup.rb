@@ -16,8 +16,8 @@ module ProjectKit
     def create_files
       type = options[:type]
       return say "could not find #{type} template directory", :red unless Dir.exist?("#{TEMPLATE_PATH}/#{type}")
-      @name = ask("Name of your new project:")
-      say "Setting up #{@name}...", :blue
+      @name = ask("name of your new project:")
+      say "setting up #{@name}...", :blue
       Dir.glob("#{TEMPLATE_PATH}/#{type}/**/*", File::FNM_DOTMATCH) do |abs_file|
         file_pathname = Pathname.new(abs_file)
         template_pathname = Pathname.new("#{TEMPLATE_PATH}/#{type}")
