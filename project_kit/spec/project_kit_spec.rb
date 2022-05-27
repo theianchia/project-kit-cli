@@ -17,6 +17,14 @@ RSpec.describe ProjectKit do
         wait_thr.join
       end 
       expect(File.exist?("#{ABS_PATH}/#{project}")).to be true
+    end
+  end
+
+  describe '#sync' do 
+    it "sync gem templates to ../test directory" do 
+      project = 'test'
+      system("bundle exec exe/project_kit sync gem -t ../test")
+      expect(File.exist?("#{ABS_PATH}/#{project}")).to be true
       if File.exist?("#{ABS_PATH}/#{project}")
         system("rm -r #{ABS_PATH}/#{project}")
       end

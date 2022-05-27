@@ -4,7 +4,7 @@
 <div align="center">
   <h3 align="center">Project Kit CLI</h3>
   <p align="center">
-    Dev-focused CLI tool to improve efficiency
+    Dev-focused Ruby CLI tool to improve efficiency
   </p>
 </div>
 
@@ -194,15 +194,30 @@ ProjectKit
   #setup
 Name of your new project: test
 Setting up test...
-      create  test/.gitignore
-      create  test/.ruby-version
-      create  test/Gemfile
-      create  test/LICENSE.txt
+      create  /Users/ian.chia@kaligo.com/Downloads/project-kit-cli/test/.gitignore
+      create  /Users/ian.chia@kaligo.com/Downloads/project-kit-cli/test/.ruby-version
+      create  /Users/ian.chia@kaligo.com/Downloads/project-kit-cli/test/Gemfile
+      create  /Users/ian.chia@kaligo.com/Downloads/project-kit-cli/test/LICENSE.txt
 test gem project successfully setup
     initial setup of a gem project
+  #sync
+finding ../test
+   identical  /Users/ian.chia@kaligo.com/Downloads/project-kit-cli/test/.gitignore
+   identical  /Users/ian.chia@kaligo.com/Downloads/project-kit-cli/test/.ruby-version
+   identical  /Users/ian.chia@kaligo.com/Downloads/project-kit-cli/test/Gemfile
+   identical  /Users/ian.chia@kaligo.com/Downloads/project-kit-cli/test/LICENSE.txt
++--------------+----------------+
+| Synced Files | Unsynced Files |
++--------------+----------------+
+|.gitignore    |                |
+|.ruby-version |                |
+|Gemfile       |                |
+|LICENSE.txt   |                |
++--------------+----------------+
+    sync gem templates to ../test directory
 
-Finished in 0.57431 seconds (files took 0.34721 seconds to load)
-1 example, 0 failures
+Finished in 1.18 seconds (files took 0.36764 seconds to load)
+2 examples, 0 failures
   ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
