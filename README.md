@@ -32,8 +32,8 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 * Project Kit is a ruby project starter kit that makes bootstrapping and syncing common development items easy. 
-* It aims to speed up ruby projects by hosting these development templates in a centralised directory as a single source of truth and distribute changes to multiple projects all from a single point.
-* Project Kit was built using Thor, which is a toolkit for building CLI interfaces. A Thor class exposes an executable with a number of subcommands where public methods defined become task commands.
+  * It aims to speed up ruby projects by hosting these development templates in a centralised directory as a single source of truth and distribute changes to multiple projects all from a single point.
+  * Project Kit was built using Thor, which is a toolkit for building CLI interfaces. A Thor class exposes an executable with a number of subcommands where public methods defined become task commands.
 * In this repository, you will also find several other examples demonstrating `Thor::Group`, subcommands and generators. 
 
 
