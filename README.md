@@ -177,13 +177,13 @@ finding ../hello
 
 4. Package and install the gem
   ```sh
-  ~ gem build proj_kit.gemspec
-  ~ gem install proj_kit-1.0.0.gem --local
+  ~ gem build project_kit.gemspec
+  ~ gem install project_kit-1.0.0.gem --local
   ```
 
 5. Run the gem 
   ```sh
-  ~ proj_kit
+  ~ project_kit
   ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
