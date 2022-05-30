@@ -226,7 +226,7 @@ Finished in 1.18 seconds (files took 0.36764 seconds to load)
 ## Additional Takeaways
 * Unlike Thor files, `.start(ARGV)` would need to be added at the end of a Ruby script to instantiate the class and invoke the task
 * Ruby relies on absolute paths while Thor relies on relative paths, hence the need to resolve the path difference when accessing templates
-* In Project Kit, a `File.file?` check was performed to ensure that the current iterable is a file and not a directory, as by default `template()` creates a copy of a file which might lead to subsequent file clashes later on 
+* In Project Kit, a `File.file?` check was performed to ensure that the current iterable is a file and not a directory, as by default `template()` creates a copy of a file which might lead to subsequent file clashes 
   * eg. a file clash between `.github` and `.github/PULL_REQUEST_TEMPLATE.md`
 * Open3#popen3 allows you to interact with the external command while it is running and consolidates all 3 of the std pipes into a single stream
 * As each pipe has a limited buffer size, it is important to ensure the stdout streams are continuously read else `stdin.write` will be blocked
