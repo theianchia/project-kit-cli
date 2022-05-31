@@ -34,7 +34,7 @@
 ## About The Project
 * Project Kit is a ruby project starter kit that makes bootstrapping and syncing common development items easy. 
   * It aims to speed up ruby projects by hosting these development templates in a centralised directory as a single source of truth and distribute changes to multiple projects all from a single point.
-  * Project Kit was built using Thor, which is a toolkit for building CLI interfaces. A Thor class exposes an executable with a number of subcommands where public methods defined become task commands.
+  * Project Kit is built using Thor, a toolkit for building CLI interfaces. A Thor class exposes an executable with a number of subcommands where public methods defined become task commands.
 * In this repository, you will also find several other examples demonstrating `Thor::Group`, subcommands and generators. 
 
 
@@ -195,18 +195,18 @@ ProjectKit
   #setup
 name of your new project: test
 setting up test...
-      create  /Users/ian.chia@kaligo.com/Downloads/project-kit-cli/test/.gitignore
-      create  /Users/ian.chia@kaligo.com/Downloads/project-kit-cli/test/.ruby-version
-      create  /Users/ian.chia@kaligo.com/Downloads/project-kit-cli/test/Gemfile
-      create  /Users/ian.chia@kaligo.com/Downloads/project-kit-cli/test/LICENSE.txt
+      create  project-kit-cli/test/.gitignore
+      create  project-kit-cli/test/.ruby-version
+      create  project-kit-cli/test/Gemfile
+      create  project-kit-cli/test/LICENSE.txt
 test gem project successfully setup
     initial setup of a gem project
   #sync
 finding ../test
-   identical  /Users/ian.chia@kaligo.com/Downloads/project-kit-cli/test/.gitignore
-   identical  /Users/ian.chia@kaligo.com/Downloads/project-kit-cli/test/.ruby-version
-   identical  /Users/ian.chia@kaligo.com/Downloads/project-kit-cli/test/Gemfile
-   identical  /Users/ian.chia@kaligo.com/Downloads/project-kit-cli/test/LICENSE.txt
+   identical  project-kit-cli/test/.gitignore
+   identical  project-kit-cli/test/.ruby-version
+   identical  project-kit-cli/test/Gemfile
+   identical  project-kit-cli/test/LICENSE.txt
 +--------------+----------------+
 | Synced Files | Unsynced Files |
 +--------------+----------------+
