@@ -2,6 +2,7 @@
 
 require "thor"
 require "pathname"
+
 TEMPLATE_PATH = File.expand_path("../templates", File.dirname(__FILE__))
 
 module ProjectKit
@@ -16,13 +17,15 @@ module ProjectKit
     def create_files
       type = options[:type]
       return say "could not find #{type} template directory", :red unless Dir.exist?("#{TEMPLATE_PATH}/#{type}")
+
+      
       @name = ask("name of your new project:")
       say "setting up #{@name}...", :blue
       Dir.glob("#{TEMPLATE_PATH}/#{type}/**/*", File::FNM_DOTMATCH) do |abs_file|
         file_pathname = Pathname.new(abs_file)
         template_pathname = Pathname.new("#{TEMPLATE_PATH}/#{type}")
         file = file_pathname.relative_path_from(template_pathname).to_s
-        unless (['.', '..'].include?(file) or file.include?('.DS_Store'))
+        unless (%w(. ..).include?(relative_file_path) || relative_file_path.include?('.DS_Store'))
           if File.file?(abs_file)
             template("../templates/#{type}/#{file}", "../#{@name}/#{file}")
           end 
