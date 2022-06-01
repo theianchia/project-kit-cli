@@ -29,7 +29,7 @@ module ProjectKit
           file_pathname = Pathname.new(abs_file_path)
           template_pathname = Pathname.new("#{TEMPLATE_PATH}/#{type}")
           file = file_pathname.relative_path_from(template_pathname).to_s
-          unless (%w(. ..).include?(relative_file_path) || relative_file_path.include?('.DS_Store'))
+          unless %w(. ..).include?(file) || file.include?('.DS_Store')
             if File.file?(abs_file_path)
               template("../templates/#{type}/#{file}", "#{target}/#{file}")
               file_content = File.read("#{target}/#{file}")
@@ -55,19 +55,19 @@ module ProjectKit
     desc 'hanami', 'sync hanami file templates for a project into a target app directory'
     def hanami
       obj = {type: "hanami", target: options[:target]}
-      invoke SyncFiles, [], :details => obj 
+      invoke SyncFiles, [], details: obj 
     end
 
     desc 'rails', 'sync rails file templates for a project into a target app directory'
     def rails
       obj = {type: "rails", target: options[:target]}
-      invoke SyncFiles, [], :details => obj 
+      invoke SyncFiles, [], details: obj 
     end
 
     desc 'gem', 'sync gem file templates for a project into a target gem directory'
     def gem
       obj = {type: "gem", target: options[:target]}
-      invoke SyncFiles, [], :details => obj 
+      invoke SyncFiles, [], details: obj 
     end
   end
 end

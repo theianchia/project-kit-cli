@@ -25,7 +25,7 @@ module ProjectKit
         file_pathname = Pathname.new(abs_file)
         template_pathname = Pathname.new("#{TEMPLATE_PATH}/#{type}")
         file = file_pathname.relative_path_from(template_pathname).to_s
-        unless (%w(. ..).include?(relative_file_path) || relative_file_path.include?('.DS_Store'))
+        unless %w(. ..).include?(file) || file.include?('.DS_Store')
           if File.file?(abs_file)
             template("../templates/#{type}/#{file}", "../#{@name}/#{file}")
           end 

@@ -4,31 +4,33 @@ require 'open3'
 ABS_PATH = File.expand_path("../../", File.dirname(__FILE__))
 
 RSpec.describe ProjectKit do
+  before(:context) do
+    @project = 'test'
+  end
 
   describe '#setup' do 
-    it "initial setup of a gem project" do 
-      project = 'test'
+    it "setup a gem project" do 
       Open3.popen3("bundle exec exe/project_kit setup gem") do |stdin, stdout, stderr, wait_thr| 
-        stdin.write("#{project}\n")
+        stdin.write("#{@project}\n")
         puts stdout.read
         stdin.close
         stdout.close
         stderr.close
-        wait_thr.join
       end 
-      expect(File.exist?("#{ABS_PATH}/#{project}")).to be true
+      expect(File.exist?("#{ABS_PATH}/#{@project}")).to be true
     end
   end
 
   describe '#sync' do 
-    it "sync gem templates to ../test directory" do 
-      project = 'test'
-      system("bundle exec exe/project_kit sync gem -t ../test")
-      expect(File.exist?("#{ABS_PATH}/#{project}")).to be true
-      if File.exist?("#{ABS_PATH}/#{project}")
-        system("rm -r #{ABS_PATH}/#{project}")
+    after(:context) do 
+      if File.exist?("#{ABS_PATH}/#{@project}")
+        system("rm -r #{ABS_PATH}/#{@project}")
       end
     end
-  end
 
+    it "sync gem templates" do 
+      system("bundle exec exe/project_kit sync gem -t ../test")
+      expect(File.exist?("#{ABS_PATH}/#{@project}")).to be true
+    end
+  end
 end
