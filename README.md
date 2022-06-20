@@ -34,8 +34,7 @@
 ## About The Project
 * Project Kit is a ruby project starter kit that makes bootstrapping and syncing common development items easy. 
   * It aims to speed up ruby projects by hosting these development templates in a centralised directory as a single source of truth and distribute changes to multiple projects all from a single point.
-  * Project Kit is built using Thor, a toolkit for building CLI interfaces. A Thor class exposes an executable with a number of subcommands where public methods defined become task commands.
-* In this repository, you will also find several other examples demonstrating `Thor::Group`, subcommands and generators. 
+  * Project Kit is built using `Thor`, a toolkit for building CLI interfaces. A `Thor` class exposes an executable with a number of subcommands where public methods defined become task commands.
 
 
 ### Built With
@@ -62,17 +61,9 @@
 
 1. Run `thor list` or `thor -T` to see a list of available commands for a thor task 
   ```sh
-a
--
-thor a:list LINE  # does A stuff
-
-b
--
-thor b:dig NAME  # does B stuff
-
 test
 ----
-thor test:goodbye     # say goodbye to the world
+thor test:goodbye     # say goodbye to NAME
 thor test:hello NAME  # say hello to NAME
   ```
 2. Run `thor help <command>` to see the description and options for a particular command
@@ -86,8 +77,6 @@ Options:
 
 say hello to NAME
   ```
-
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Using a `.rb` file
 Within some examples you may find the following directories and files:
@@ -107,23 +96,7 @@ Within some examples you may find the following directories and files:
   ~ chmod a+x bin/command
   ```
 
-2. Now, we are able to call it
-  ```sh
-  ~ ./cli.rb
-  Commands:
-  cli.rb docs            # create and publish docs
-  cli.rb help [COMMAND]  # Describe available commands or one specific command
-  
-  or 
-  
-  ~ bin/command
-  Commands:
-  command anothercounter  # Prints numbers + 2 in sequence
-  command count           # Prints numbers in sequence
-  command foo             # Prints foo
-  command help [COMMAND]  # Describe available commands or one specific command
-  ```
-
+2. Now, we are able to call it by running `./<file>.rb` or `bin/command`
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -140,7 +113,7 @@ Within some examples you may find the following directories and files:
   ~ chmod +x exe/project_kit
   ```
 
-3. Call lib by executing `exe/project_kit` in the current context of bundle; prefix `help` before a command to view the command's description
+3. Call lib by executing `exe/project_kit` in the current context of bundle
   ```sh
   ~ bundle exec exe/project_kit
 Commands:
