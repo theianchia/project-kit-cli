@@ -35,7 +35,6 @@ module ProjectKit
           file_content = File.read("#{target}/#{file}")
           template_content = File.read(abs_file_path)
           file_content == template_content ? synced.append(file) : unsynced.append(file)
-          end
         end
         result = synced.zip(unsynced).to_a
         table = TTY::Table.new([{value:" Synced Files ", alignment: :center}, {value:" Unsynced Files ", alignment: :center}], result)
@@ -69,4 +68,5 @@ module ProjectKit
       invoke SyncFiles, [], details: obj 
     end
   end
+
 end
