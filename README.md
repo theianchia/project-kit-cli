@@ -79,7 +79,7 @@ Within some projects you may find the following directory:
   ~ chmod a+x bin/command
   ```
 
-2. Now, we are able to call it by running `./<file>.rb` or `bin/command`
+2. Now, we are able to call it by running `./<file>` or `bin/command`
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
