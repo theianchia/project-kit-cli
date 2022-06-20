@@ -31,7 +31,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 * Project Kit is a ruby project starter kit that makes bootstrapping and syncing common development items easy. 
-  * It aims to speed up ruby projects by hosting these development templates in a centralised directory as a single source of truth and distribute changes to multiple projects all from a single point.
+  * It aims to speed up ruby projects by hosting these development templates in a centralised directory as a single source of truth and propagate changes to multiple projects all from a single point.
   * Project Kit is built using `Thor`, a toolkit for building CLI interfaces. A `Thor` class exposes an executable with a number of subcommands where public methods defined become task commands.
 
 
@@ -58,33 +58,18 @@
 ### Using a `.thor` file
 
 1. Run `thor list` or `thor -T` to see a list of available commands for a thor task 
-  ```sh
-test
-----
-thor test:goodbye     # say goodbye to NAME
-thor test:hello NAME  # say hello to NAME
-  ```
+
 2. Run `thor help <command>` to see the description and options for a particular command
-  ```sh
-Usage:
-  thor test:hello NAME
-
-Options:
-  -y, [--yell], [--no-yell]        # shout hello to NAME
-      [--verbose], [--no-verbose]  
-
-say hello to NAME
-  ```
 
 ### Using a `.rb` file
-Within some examples you may find the following directories and files:
+Within some projects you may find the following directory:
 
 ```
 ├── bin
     └── command
 └── lib
     ├── command.rb
-    └── sub_task.rb
+    └── subcommand.rb
 ```
 
 1. To call lib, we need to change the permissions of our bin script so that it can be executed
@@ -106,7 +91,7 @@ Within some examples you may find the following directories and files:
   ~ bundle install
   ```
   
-2. Change the permissions so that you can execute the script
+2. Change the permissions so that the script can be executed
   ```sh
   ~ chmod +x exe/project_kit
   ```
@@ -201,6 +186,5 @@ Finished in 1.18 seconds (files took 0.36764 seconds to load)
   * eg. a file clash between `.github` and `.github/PULL_REQUEST_TEMPLATE.md`
 * Open3#popen3 allows you to interact with the external command while it is running and consolidates all 3 of the std pipes into a single stream
 * As each pipe has a limited buffer size, it is important to ensure the stdout streams are continuously read else `stdin.write` will be blocked
-
 
 <p align="right">(<a href="#top">back to top</a>)</p>
