@@ -2,11 +2,9 @@
 
 <!-- PROJECT LOGO -->
 <div align="center">
-  <h3 align="center">Project Kit CLI</h3>
-  <p align="center">
-     Dev-focused Ruby CLI tool to improve propagation efficiency
-  </p>
+  <h2>Project Kit CLI</h2>
   <img src="images/demo.gif" alt="demo">
+  <p>Dev-focused Ruby CLI tool to improve propagation efficiency</p>
 </div>
 
 
